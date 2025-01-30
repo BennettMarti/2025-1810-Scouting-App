@@ -65,7 +65,7 @@ export type Database = {
           endAlgaeBot: boolean | null
 
           endNotes?: string | null
-          endCooperatition?: boolean[] | null
+          endCooperatition?: boolean | null
           //All of the starting stuff is below 
           id: number
           intakeStyle: number | null
@@ -93,7 +93,7 @@ export type Database = {
           endCoralBot?: boolean | null
           endAlgaeBot?: boolean | null
           endNotes?: string | null
-          endCooperatition?: boolean[] | null
+          endCooperatition?: boolean | null
           //All of the starting stuff is below 
           id?: number
           intakeStyle?: number | null
@@ -120,7 +120,7 @@ export type Database = {
           endCoralBot?: boolean | null
           endAlgaeBot?: boolean | null
           endNotes?: string | null
-          endCooperatition?: boolean[] | null
+          endCooperatition?: boolean | null
           //All of the starting stuff is below 
           id?: number
           intakeStyle?: number | null

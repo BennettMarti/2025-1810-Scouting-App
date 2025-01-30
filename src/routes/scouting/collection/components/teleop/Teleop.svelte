@@ -138,6 +138,16 @@
     </div>
 </div>
 
+<div class="flex mx-4 my-8 justify-center">
+    <div class="flex flex-row w-2/3">
+        <label for="algaeCapable" class="flex flex-col justify-center text-w scale-text font-semibold w-5/6">Can Manipulate Algae</label>
+        <input name="algaeCapable"
+                type="checkbox"
+                bind:checked={$scoutingData.teleAlgaeCapable}
+                class="testcheck:tog checked:bg-active bg-inactive">
+    </div>
+</div>
+
 <style>
     .dynMarg-small {
         margin: 3vw;

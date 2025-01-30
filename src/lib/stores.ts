@@ -31,6 +31,7 @@ export enum EndClimb {
     unset = -1
 }
 
+
 export interface ScoutingData {
     id: number;
     matchid: number;
@@ -53,7 +54,7 @@ export interface ScoutingData {
    
     endCoralBot:boolean,
     endAlgaeBot:boolean,
-    endCooperatition: boolean[],
+    endCooperatition: boolean,
     endClimb : EndClimb,
     endNotes: string,
     WinState: WinState,
@@ -84,7 +85,7 @@ const defaultData: ScoutingData = {
     endClimb: EndClimb.unset,
     endCoralBot: false,
     endAlgaeBot: false,
-    endCooperatition: [false,false],
+    endCooperatition:false,
     
     endNotes: "",
 };
@@ -120,7 +121,7 @@ const compile = (data: ScoutingData) => {
 
         endCoralBot:data.endCoralBot,
         endAlgaeBot:data.endAlgaeBot,
-        endCooperatition:data.endCooperatition ,
+       endCooperatition:data.endCooperatition,
         WinState:data.WinState,
         endClimb: data.endClimb,
         
@@ -174,7 +175,7 @@ export const score = (data: Database["public"]["Tables"]["scouting-data"]["Row"]
         (4 * (data.autoCoral2 ?? 0)) +
         (6 * (data.autoCoral3 ?? 0)) +
         (7 * (data.autoCoral4 ?? 0)) +  
-        (6 * (data.teleProcessor ?? 0));
+        (6 * (data.teleProcessor ?? 0)) +
         (data.autoLeave ? 3 : 0);
 
     let teleScore =
@@ -183,16 +184,30 @@ export const score = (data: Database["public"]["Tables"]["scouting-data"]["Row"]
         (4 * (data.teleCoral3 ?? 0)) +
         (5 * (data.teleCoral4 ?? 0)) + 
         //TODO Differentiate the auto processor from the tele processor dumbass
-        (5 * (data.teleProcessor ?? 0)) + 
+        
 
         (4 * (data.teleAlgaeScored ?? 0));
 
-    let endScore =
-      
+    let endScore = 0;
+
+           if(EndClimb.Deep){
+            endScore = endScore + 12;
+           }
+           else if(EndClimb.Shallow){
+            endScore = endScore + 6
+           }
+           else if(EndClimb.Park){
+            endScore = endScore + 2
+           }
+           else if(EndClimb.None || EndClimb.unset){
+            endScore = endScore;
+           }
+
         (() => {
             switch (data.endClimb) {
                 case EndClimb.Deep:
-                    return 3;  
+                
+                    return 3; 
                 case EndClimb.Shallow:
                     return 2;
                 case EndClimb.Park:
@@ -203,7 +218,7 @@ export const score = (data: Database["public"]["Tables"]["scouting-data"]["Row"]
                     return -1;
             }
         })(); 
-
+            
     return {
         compiledData: data,
         scoredData: {
