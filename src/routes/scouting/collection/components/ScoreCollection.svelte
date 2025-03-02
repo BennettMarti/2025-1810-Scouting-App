@@ -37,11 +37,13 @@
             totalEndgame: $ppgStore[i].totalEndgame + scores.endgame,
             totalTeleop: $ppgStore[i].totalTeleop + scores.teleop
         }
-
+        var triesToUpload = 0;
         do {
             // try to push the data to the database and if it fails do it again
+            
+            triesToUpload++;
             var { error: ppgError } = await supabase.from("ppg-data").update(ppgData).eq("teamid", ppgData.teamid);
-        } while (ppgError);
+        } while (ppgError && triesToUpload <= 10);
 
         location.href = "/scouting";
     }
@@ -59,4 +61,4 @@
         <button class={`w-5/6 text-xl shadow-sm rounded ${($scoutingData.WinState !== WinState.unset) ? "text-w bg-active" : "text-secondary bg-inactive"} py-3`}
                 on:click={submit}>Submit</button>
     </div>
-{/if}``
+{/if}
