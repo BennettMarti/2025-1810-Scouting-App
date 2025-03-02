@@ -194,10 +194,10 @@ export const score = (data: Database["public"]["Tables"]["scouting-data"]["Row"]
             endScore = endScore + 12;
            }
            else if(EndClimb.Shallow){
-            endScore = endScore + 6
+            endScore = endScore + 6;
            }
            else if(EndClimb.Park){
-            endScore = endScore + 2
+            endScore = endScore + 2;
            }
            else if(EndClimb.None || EndClimb.unset){
             endScore = endScore;
