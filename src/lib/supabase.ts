@@ -72,7 +72,7 @@ export type Database = {
           allianceColor: number
           matchid: number
           teamid: number
-          WinState: number | null
+          winState: number | null
           endClimb: number | null
           
         }
@@ -100,7 +100,7 @@ export type Database = {
           allianceColor: number
           matchid: number
           teamid: number
-          WinState?: number | null
+          winState?: number | null
           endClimb?: number | null
         }
         Update: {
@@ -127,7 +127,7 @@ export type Database = {
           allianceColor?: number
           matchid?: number
           teamid?: number
-          WinState?: number | null
+          winState?: number | null
           endClimb?: number | null
         }
         Relationships: []

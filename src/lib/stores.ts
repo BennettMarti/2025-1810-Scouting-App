@@ -57,7 +57,7 @@ export interface ScoutingData {
     endCooperatition: boolean,
     endClimb : EndClimb,
     endNotes: string,
-    WinState: WinState,
+    winState: WinState,
 
 };
 
@@ -79,7 +79,7 @@ const defaultData: ScoutingData = {
     teleAlgaeScored: 0,
     teleAlgaeCapable: false,
     teleProcessor: 0,
-    WinState: -1,
+    winState: WinState.unset,
     intakeStyle: [false,false],
     
     endClimb: EndClimb.unset,
@@ -103,6 +103,7 @@ const compile = (data: ScoutingData) => {
         teamid: data.teamid,
         matchid: data.matchid,
         allianceColor: data.teamcolor,
+        winState: data.winState,
 
         autoCoral1:data.autoCoral1,
         autoCoral2:data.autoCoral2,
@@ -122,9 +123,13 @@ const compile = (data: ScoutingData) => {
         endCoralBot:data.endCoralBot,
         endAlgaeBot:data.endAlgaeBot,
        endCooperatition:data.endCooperatition,
-        WinState:data.WinState,
         endClimb: data.endClimb,
+    
         
+       
+    
+
+
     
         /*
         autoCoral1: data.autoTaxi ? 1 : 0,
