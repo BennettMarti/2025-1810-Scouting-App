@@ -1,6 +1,7 @@
 {
-	"extends": "/Users/sbm00123/Desktop/2025-1810-9316-Scouting-2/.svelte-kit/tsconfig.json",
-	//./.svelte-kit/tsconfig.json
+	"extends": "/.svelte-kit/tsconfig.json",
+	//	.svelte-kit/tsconfig.json
+	//	./.svelte-kit/tsconfig.json
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": true,
