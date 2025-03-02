@@ -33,6 +33,7 @@
     "dependencies": {
         "@supabase/auth-helpers-sveltekit": "^0.9.4",
         "@supabase/supabase-js": "^2.33.1",
+        "encoding": "^0.1.13",
         "node-fetch": "^3.3.1"
     }
 }
