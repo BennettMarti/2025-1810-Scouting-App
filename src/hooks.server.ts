@@ -16,7 +16,7 @@ export const handle: Handle = async ({ event, resolve }) => {
         event
     });
 
-    event.locals.scoutingFetch = new ScoutingFetch(2025, "MOSE", {
+    event.locals.scoutingFetch = new ScoutingFetch(2024, "MOSE", {
         // TBA: PUBLIC_TBA_KEY,
         // The best show ever https://www.youtube.com/watch?v=q6MJSfjXUgQ
         // Trombone Solo go especially hard https://www.youtube.com/watch?v=eHkwbmrj4QY

@@ -127,20 +127,22 @@
 </div>
 
 
-<div class="inline-flex w-2/3">
-    <div class="w-1/3 text-center">
-        <button class="appearance-none rounded shadow-sm bg-active dynMarg-small px-4 py-1 scale-text"
-        on:click={AutoDecAlgae}>-</button>
-    </div>
+<div class="flex text-w mx-4 justify-center">
+    <div class="inline-flex w-2/3">
+        <div class="w-1/3 text-center"> 
+            <button class="appearance-none rounded shadow-sm bg-active dynMarg-small px-4 py-1 scale-text"
+                on:click={AutoDecAlgae}>-</button>
+            </div>
+
 
     <p class="text-w my-auto scale-text-large font-thin w-1/3 text-center">{$scoutingData.autoAlgaeRemoved}</p>
-    <div class="w-1/3 text-center">
-        <button class="appearance-none rounded shadow-sm bg-active dynMarg-small px-4 py-1 scale-text"
-        on:click={() => $scoutingData.autoAlgaeRemoved++}>+</button>
+        <div class="w-1/3 text-center">
+            <button class="appearance-none rounded shadow-sm bg-active dynMarg-small px-4 py-1 scale-text"
+            on:click={() => $scoutingData.autoAlgaeRemoved++}>+</button>
+        </div>
     </div>
-
-
 </div>
+
 <div class="flex mx-4 my-8 justify-center">
     <div class="flex flex-row w-2/3">
         <label for="taxi" class="flex flex-col justify-center text-w scale-text font-semibold w-5/6">Left Starting Zone</label>

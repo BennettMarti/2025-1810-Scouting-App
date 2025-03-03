@@ -20,21 +20,21 @@
 
         <input name="Win" id="Park" type="radio" value={WinState.Win}
         class="mx-auto testcheck:tog checked:bg-active bg-inactive"
-        bind:group={$scoutingData.WinState}/>
+        bind:group={$scoutingData.winState}/>
     </div>
     <div class="flex flex-col justify-center w-1/3">
         <label for="loss" class="text-center text-w scale-text font-semibold">Loss</label>
 
         <input name="Loss" id="loss" type="radio" value={WinState.Loss}
         class="mx-auto testcheck:tog checked:bg-active bg-inactive"
-        bind:group={$scoutingData.WinState}/>
+        bind:group={$scoutingData.winState}/>
     </div>
     <div class="flex flex-col justify-center w-1/3">
         <label for="loss" class="text-center text-w scale-text font-semibold">Tie</label>
 
         <input name="Tie" id="loss" type="radio" value={WinState.Tie}
         class="mx-auto testcheck:tog checked:bg-active bg-inactive"
-        bind:group={$scoutingData.WinState}/>
+        bind:group={$scoutingData.winState}/>
     </div>
 </div>
 

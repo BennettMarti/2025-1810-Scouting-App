@@ -46,7 +46,7 @@
 
 <div class="flex justify-center dynPad">
     <div class="flex flex-row w-1/2 mt-8">
-        <label for="co-op" class="flex flex-col justify-center text-w scale-text font-semibold">Co-Op</label>
+        <label for="co-op" class="flex flex-col justify-center text-w scale-text font-semibold">Co-Op Achieved</label>
         <input name="co-op" type="checkbox"
             bind:checked={$scoutingData.endCooperatition}
             class="testcheck:tog checked:bg-active bg-inactive">

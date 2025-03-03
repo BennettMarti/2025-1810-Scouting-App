@@ -188,10 +188,8 @@ export const score = (data: Database["public"]["Tables"]["scouting-data"]["Row"]
         (3 * (data.teleCoral2 ?? 0)) + 
         (4 * (data.teleCoral3 ?? 0)) +
         (5 * (data.teleCoral4 ?? 0)) + 
-        //TODO Differentiate the auto processor from the tele processor dumbass
-        
 
-        (4 * (data.teleAlgaeScored ?? 0));
+        (6 * (data.teleAlgaeScored ?? 0));
 
     let endScore = 0;
 
@@ -199,10 +197,10 @@ export const score = (data: Database["public"]["Tables"]["scouting-data"]["Row"]
             endScore = endScore + 12;
            }
            else if(EndClimb.Shallow){
-            endScore = endScore + 6
+            endScore = endScore + 6;
            }
            else if(EndClimb.Park){
-            endScore = endScore + 2
+            endScore = endScore + 2;
            }
            else if(EndClimb.None || EndClimb.unset){
             endScore = endScore;
